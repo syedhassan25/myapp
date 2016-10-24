@@ -1,0 +1,58 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="features/services/controller.js"></script>
+</head>
+<body ng-app="myapp">
+<div class="container" ng-controller="mySrvctrl">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>&nbsp;</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+                <td><div class="form-control"><input type="text" v ng-model="serviceClient.name"></div></td>
+                <td> <button class="btn btn-primary" ng-click="create()">Add</button></td>
+                <td> <button class="btn btn-primary" ng-click="update(serviceClient._id)">Update</button></td>
+            </tr>
+            </tbody>
+            </table>
+
+
+
+    </div>
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Firstname</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr ng-repeat="serviceClientdata in serviceClients">
+                <td>{{serviceClientdata.name}}</td>
+                <td>
+                    <button ng-click="remove(serviceClientdata._id)" class="btn btn-danger">remove</button>
+                </td>
+                <td>
+                    <button ng-click="select(serviceClientdata._id)" class="btn btn-warning">edit</button>
+                </td>
+
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    </div>
+</body>
+</html>
